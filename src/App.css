@@ -1,0 +1,57 @@
+h1, h2, h3, h4 {font-family: 'Oswald', sans-serif;}
+h4 {@apply text-[15px] leading-5 font-medium uppercase mb-6;}
+p {font-family: 'Karla', sans-serif;}
+
+.accent-links {
+  background-color: transparent;
+  color: #faaf52;
+  text-decoration: underline;
+}
+
+.paragraph-small {
+  @apply text-[13px] leading-4 mb-4;
+  color: hsla(0,0%,100%,.7);
+}
+
+/* FOOTER */
+.footer {
+  @apply w-full bg-gradient-to-r from-gray-700 to-black-700;
+  /* background-image: linear-gradient(90deg,#40424b,#1c1d24); */
+  padding: 64px 32px 16px 32px;
+  color: #ffffff;
+}
+.footer_header {@apply text-[15px] leading-5 mb-6;}
+.footer_link {@apply block text-[13px] text-slate-400 leading-5 py-1.5 pe-2 hover:text-white hover:underline decoration-2;}
+.footer_link_contact {
+  font-family: 'Oswald', sans-serif;
+  @apply block text-base font-semibold leading-6 mt-5 mb-10 underline decoration-slate-400;
+}
+.copyright-section {
+  border-top: 1px solid hsla(0,0%,100%,.3);
+  @apply flex flex-col md:flex-row md:justify-between pt-6;
+}
+.social-icons {
+  @apply w-10 h-10 flex justify-center items-center relative cursor-pointer;
+  border: 1px solid hsla(0,0%,100%,.5);
+}
+.social-icons::after {
+  content: "";
+  position: absolute;
+  background-color: #faaf52;
+  transition-duration: 0.5s;
+}
+.social-icons span {
+  position: absolute;
+  z-index: 100;
+}
+.social-icons::after {
+  height: 0;
+  left: 0;
+  bottom: 0;
+  /*bottom:0 // from bottom to top*/
+  width: 100%;
+}
+.social-icons:hover::after {
+  height: 100%;
+  color: #ffffff;
+}
