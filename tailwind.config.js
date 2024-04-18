@@ -11,7 +11,7 @@ module.exports = {
         'black-700': '#1c1d24',
       },
       fontFamily: {
-        sans: ['Oswald', 'Karla', 'sans-serif'],
+        sans: ['Karla', 'sans-serif'],
       },
     },
   },

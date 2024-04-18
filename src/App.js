@@ -2,7 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Home } from './components/Home';
-
+import { AboutMe } from './components/AboutMe';
+import { Quote } from './components/Quote';
+import { Projects } from './components/Projects';
 import { ProductList } from './components/ProductList';
 import { ProductDetail } from './components/ProductDetail';
 import { Contact } from './components/Contact';
@@ -30,6 +32,9 @@ function App() {
           <Route path='*' element={<PageNotFound title='404' />} />
         </Routes>
       </main>
+      <AboutMe />
+      <Quote />
+      <Projects />
       <Footer />
     </div>
 );

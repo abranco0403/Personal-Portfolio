@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import heroImg from '../assets/kitten.jpeg';
+import heroImg from '../assets/kitten.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub, faCodepen } from '@fortawesome/free-brands-svg-icons';
 import { faCompass, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -35,23 +35,20 @@ const FooterSocialIcon = ({ icon }) => (
 
 export const Home = () => {
   return (
-    <div className="w-full max-w-[80rem] mx-auto">
-      <div className="flex wrap flex-col lg:flex-row">
+    <div className="w-screen max-w-[100rem] h-screen mx-auto">
+      <div className="h-screen flex wrap flex-col lg:flex-row lg:justify-center lg:items-center">
         {/* HEADER - TITLE */}
-        <div className="pt-[64px] px-[38px]">
-          <h1 className="w-3/4 text-[38px] font-semibold leading-[44px] mb-[18px] color-[#111111]">
+        <div className="w-full mt-[80px] px-[38px] lg:w-1/2">
+          <h1 className="w-3/4 font-sans text-[38px] leading-[44px] font-semibold uppercase pt-[32px] md:text-[38px] mb-[18px] color-[#111111] md:pt-[64px] lg:text-[44px] lg:leading-[52px] lg:w-full">
             Hello, I'm Alessandro.<br/>
-            front-End Developer<br/>
-            At <span className="text-orange"><Link className="underline">Memoreez</Link></span>.
+            Nice to meet you!<br/>
           </h1>
           <p className="w-full text-[15px] leading-[24px] mb-4 text-[#777777]">
-            Currently, I'm leading the Gaming Video Discovery & 
-            Tournaments team at Facebook Gaming. Our mission is to 
-            "empower people to build community through friendly competition 
-            and shared love of gaming."
-            <span>Alessandro</span>
+          I'm currently at Atlassian on the Growth team as a Director of Product Design (IC), 
+          leading various types of strategic growth design work across the company
+  
           </p>
-          <div className="flex justify-between items-center mb-[75px]">
+          <div className="flex justify-between items-center mb-[60px]">
             <div className="flex flex-row items-center">
               <FontAwesomeIcon icon={faCompass} />
               <div className="ps-4">
@@ -62,8 +59,8 @@ export const Home = () => {
             <p className="text-[13px] uppercase leading-[16px] text-[#777777] lg:hidden">Email: <Link className="text-[#111111] underline font-semibold">abranco.dev@gmail.com</Link></p>
           </div>
         </div>
-        <div className="relative">
-          <img src={heroImg} alt="Kitten Hero" className="object-cover w-full h-full" />
+        <div className="relative lg:w-1/2">
+          <img src={heroImg} alt="Kitten Hero" className="sm:mb-[85px] object-cover w-full h-[600px] md:h-screen lg:mb-0" />
           <div className="text-white flex gap-3 absolute bottom-0 right-0 pe-6 pb-6">
             <FooterSocialIcons />
           </div>

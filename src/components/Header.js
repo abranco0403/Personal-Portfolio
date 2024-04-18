@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
+
 // export const Header = () => {
 //   const [showMenu, setShowMenu] = useState(false);
 //   const isDesktop = useMediaQuery({ minWidth: 1024 });
@@ -53,7 +54,7 @@ export const Header = () => {
   return (
 
 
-    <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav className="bg-white h-[56px] md:h-[64px] dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <Link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Alessandro Branco</span>

@@ -32,7 +32,7 @@ const FooterContacts = () => (
     <h4 className="footer_header">Contacts</h4>
     <FooterContactItem icon={faCompass} text="Torrance, California" />
     <FooterContactItem icon={faEnvelope} text="abranco.dev@gmail.com" />
-    <Link className="footer_link_contact" to="/contact">Send Message</Link>
+    <Link className="footer_link_contact" to="/contact">Connect on LinkedIn</Link>
   </div>
 );
 
@@ -79,7 +79,7 @@ const FooterSocialIcon = ({ icon }) => (
 );
 
 export const Footer = () => (
-  <footer className="footer">
+  <footer className="footer mt-[85px]">
     <div className="w-full max-w-[80rem] mx-auto">
 
       {/* MAIN FOOTER */}
