@@ -1,0 +1,38 @@
+.experience_container {
+    @apply flex py-4 px-6 mb-4 rounded-md;
+}
+.experience_year_container {
+    @apply w-1/4;
+}
+.experience_year_info {
+    @apply font-sans text-xs capitalize text-customYellow mb-2;
+}
+.experience_position_container {
+    @apply w-3/4;
+}
+.experience_position {
+    @apply font-sans text-white text-base capitalize font-bold mb-[9px];
+}
+.experience_company {
+    @apply font-sans text-white text-base font-thin;
+}
+.experience_description {
+    @apply font-sans text-xs capitalize text-white text-opacity-60 pb-[17px];
+} 
+
+
+    /* Responsive layout for medium screens and larger */
+@media (min-width: 768px) {
+    .experience_year_container {
+        @apply flex-row;
+    }
+    .experience_year_info {
+        @apply text-sm;
+    }
+    .experience_position {
+        @apply text-base;
+    }
+    .experience_description {
+        @apply text-sm;
+    }
+}

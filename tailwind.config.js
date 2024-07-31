@@ -6,15 +6,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        orange: '#faaf52',
-        'gray-700': '#40424b',
-        'black-700': '#1c1d24',
+        customYellow: '#ffd585',
+        customGreen: '#2dd4bf',
+        customBlack: '#1c1d24',
       },
       fontFamily: {
         sans: ['Karla', 'sans-serif'],
+        serif: ['Spectral', 'serif'],
       },
     },
   },
   plugins: [],
 }
-

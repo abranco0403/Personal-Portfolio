@@ -1,0 +1,9 @@
+.about_container p {
+    @apply font-sans text-sm text-white text-opacity-90 mb-5;
+}
+
+@media (min-width: 768px) {
+    .about_container p  {
+        @apply mb-8 text-sm;
+    }
+}

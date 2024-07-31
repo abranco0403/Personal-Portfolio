@@ -1,0 +1,7 @@
+
+.table-head {
+    @apply font-sans text-white text-start border-b border-white border-opacity-40 py-2 pr-8;
+}
+.table-data {
+    @apply font-sans text-sm align-text-bottom text-white border-b border-white border-opacity-40 py-4 pr-8;
+}
