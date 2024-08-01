@@ -24,6 +24,7 @@ I am a motivated and detail-oriented data analyst with a solid foundation in mat
 - **Description:** This project involves exploring and analyzing data from a study on international students to understand how their length of stay impacts their average mental health diagnostic scores. The study includes three diagnostic scores: PHQ-9 (todep), SCS (tosc), and ASISS (toas).
 - **Technologies Used:** Python, Pandas, Matplotlib, Seaborn
 
+
 ### 2. Motorcycle Parts Sales Analysis
 - **Description:** This project analyzes sales data for a company selling motorcycle parts across three warehouses in retail and wholesale markets. It focuses on understanding wholesale revenue by product line, examining monthly variations and differences across warehouses.
 - **Technologies Used:** Python, Scikit-learn, Seaborn
