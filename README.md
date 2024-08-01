@@ -1,5 +1,7 @@
 # Alessandro Branco Portfolio
 
+![Portfolio Main Page](portfolio_main_page.png)
+
 Welcome to my portfolio! This repository showcases a collection of my projects demonstrating my skills in data analysis, visualization, and problem-solving. My diverse background in mathematics, front-end development, and sales management allows me to bring a unique perspective to data-driven decision-making.
 
 ## About Me
