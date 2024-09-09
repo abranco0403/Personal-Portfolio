@@ -27,7 +27,7 @@ const ExperienceItem = ({ date, position, company, description }) => (
 export const Experience = () => {
   return (
     <section id='experience' className='mt-32'>
-      <h2 className='uppercase text-[14px] mb-6 lg:hidden'>Experience</h2>
+      <h2 className='experience_header'>Experience</h2>
       {experienceData.map((experience) => (
         <ExperienceItem
           key={experience.id}

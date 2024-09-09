@@ -6,9 +6,9 @@ export const AboutMe = () => {
   return (
     <section id="about">
       <div className="about_container">
-        <h2 className='uppercase text-sm mb-6 lg:hidden'>About</h2>
+        <h2 className='about_header'>About</h2>
         {aboutMeContent.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
+          <p className='about_paragraph' key={index}>{paragraph}</p>
         ))}
       </div>
     </section>

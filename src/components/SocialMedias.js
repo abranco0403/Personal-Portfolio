@@ -13,7 +13,7 @@ const socialMediaLinks = [
 
 export const SocialMedias = () => {
   return (
-    <nav className="flex">
+    <nav className="flex -mt-8 md:mt-0">
       <ul className="flex space-x-4">
         {socialMediaLinks.map((socialMedia, index) => (
           <li key={index}>

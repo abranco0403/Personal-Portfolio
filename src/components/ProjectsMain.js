@@ -33,6 +33,7 @@ const Project = ({ image, projectName, description, madeAt, technologies }) => (
 export const Projects = () => {
   return (
     <section id='projects' className='mt-32'>
+      <h2 className='project_title'>Projects</h2>
       {projectsData.map((project) => (
         <Project
           key={project.id}
