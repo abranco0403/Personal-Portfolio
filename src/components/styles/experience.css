@@ -23,8 +23,11 @@
     .experience_container {
         @apply flex-row px-6;
      }
-    .experience_year_container {
+    .experience_year_container  {
         @apply flex-row w-1/4;
+    }
+    .experience_header {
+        @apply hidden;
     }
     .experience_position_container {
         @apply w-3/4;

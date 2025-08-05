@@ -10,7 +10,7 @@
 
 @media (min-width: 768px) {
     .about_container {
-        @apply mt-0;
+        @apply mt-0 px-6;
     }
     .about_paragraph  {
         @apply mb-8 text-sm;

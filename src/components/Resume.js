@@ -7,7 +7,7 @@ export const Resume = () => {
   };
 
   return (
-    <div>
+    <div className='md:px-6'>
       <ArrowUp 
         onClick={handleDownload} 
         linkText='View Full Resume' 

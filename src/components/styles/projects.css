@@ -31,6 +31,9 @@
     .project_body_title {
         @apply text-base;
     }
+    .project_title {
+        @apply hidden;
+   }
     .project_body_decription {
         @apply text-sm;
     }
@@ -41,6 +44,6 @@
         @apply w-1/4 mr-6;
     }
     .project_tech_container {
-        @apply flex flex-wrap mt-2 border border-blue-300;
+        @apply flex flex-wrap mt-2;
     }
 }

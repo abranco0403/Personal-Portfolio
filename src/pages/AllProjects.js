@@ -6,40 +6,40 @@ import '../components/styles/AllProjects.css';
 
 const AllProjects = () => {
   return (
-    <div className='w-full h-screen pt-[46px] pb-[96px] px-[24px] bg-[#0C0C0C]'>
-      <div className='px-[96px]'>
+    <div className='main_container'>
+      <div className='row'>
         <header>
-          <ArrowLeft 
-            to='/' 
-            linkText='Alessandro Branco' 
+          <ArrowLeft
+            to='/'
+            linkText='Alessandro Branco'
           />
-          <h1 className='text-5xl font-bold text-[#FFFFFF]'>All Projects</h1>
+          <h1 className='title'>All Projects</h1>
         </header>
         <section className='mt-[40px]'>
-          <table className="table-auto">
+          <table className="table_auto">
             <thead>
               <tr>
-                <th className='table-head'>Year</th>
-                <th className='table-head'>Project</th>
-                <th className='table-head'>Made At</th>
-                <th className='table-head'>Built With</th>
-                <th className='table-head'>Link</th>
+                <th className='table_head'>Year</th>
+                <th className='table_head'>Project</th>
+                <th className='table_head'>Made At</th>
+                <th className='table_head tech_column'>Built With</th>
+                <th className='table_head'>Link</th>
               </tr>
             </thead>
             <tbody>
               {projectsData.map(project => (
                 <tr key={project.id}>
-                  <td className='table-data'>{project.year}</td>
-                  <td className='table-data'>{project.projectName}</td>
-                  <td className='table-data'>{project.madeAt}</td>
-                  <td className='table-data'>
+                  <td className='table_data'>{project.year}</td>
+                  <td className='table_data'>{project.projectName}</td>
+                  <td className='table_data'>{project.madeAt}</td>
+                  <td className='table_data tech_column'>
                     <ul className='project_tech_container'>
                       {project.technologies.map((tech, index) => (
                         <li key={index} className='project_tech_list'>{tech}</li>
                       ))}
                     </ul>
                   </td>
-                  <td className='table-data'>
+                  <td className='table_data'>
                     <ArrowUp
                       to='/AllProjects' 
                       linkText='Link to the project' 

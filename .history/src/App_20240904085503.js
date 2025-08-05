@@ -1,0 +1,36 @@
+import React, { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import AllProjects from './pages/AllProjects';
+import ErrorBoundary from './components/ErrorBoundary';
+import Loader from './components/Loader';
+
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true); 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <ErrorBoundary>
+      <div className="app-container">
+        {isLoading && <Loader />}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/allprojects" element={<AllProjects />} />
+        </Routes>
+      </div>
+    </ErrorBoundary>
+  );
+};
+
+export default App;

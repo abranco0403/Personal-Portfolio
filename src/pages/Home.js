@@ -4,7 +4,7 @@ import { Main } from '../components/Main';
 const Home = () => {
   return (
     <div>
-      <div className='w-screen flex flex-col gap-4 bg-[#0C0C0C] md:flex-row md:justify-between'>
+      <div className='w-screen flex flex-col gap-4 bg-gradient-to-r from-customBlue to-customBlack md:flex-row md:justify-between'>
         <Header />
         <Main />
       </div>
