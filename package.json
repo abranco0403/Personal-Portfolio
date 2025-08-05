@@ -2,7 +2,6 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://abranco0403.github.io/Personal-Portfolio",
   "dependencies": {
     "@codaworks/react-glow": "^1.0.6",
     "@emotion/react": "^11.13.3",

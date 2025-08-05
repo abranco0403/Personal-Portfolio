@@ -13,7 +13,7 @@
         @apply mt-0 px-6;
     }
     .about_paragraph  {
-        @apply mb-8 text-sm;
+        @apply mb-4 text-sm;
     }
     .about_header {
         @apply hidden;

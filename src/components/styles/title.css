@@ -16,6 +16,6 @@
         @apply my-4 pt-2 pb-3;
     }
     .title_paragraph {
-        @apply w-1/2;
+        @apply w-3/4;
     }
 }

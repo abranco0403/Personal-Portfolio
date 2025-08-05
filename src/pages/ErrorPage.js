@@ -1,6 +1,6 @@
 // src/pages/ErrorPage.jsx
 import { Link } from 'react-router-dom';
-import image404 from '../assets/404.png';
+import image404 from '../assets/errors/404.avif';
 
 const ErrorPage = () => {
   console.log('ErrorPage component rendered');

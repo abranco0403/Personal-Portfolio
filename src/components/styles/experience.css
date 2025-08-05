@@ -1,35 +1,70 @@
+/* Basic Experience Item Container */
 .experience_container {
-    @apply flex-col py-4 px-2 mb-4 rounded-md;
+  @apply flex-col py-4 px-2 mb-4 rounded-md;
+  border: 1px solid #232C34;
+  box-shadow: none;
+  transition: all 0.3s ease; /* Smooth transition */
+  position: relative; /* For positioning glow effects */
 }
+
+/* Hover Effect - Add Glow and Background Color Change */
+.experience_container:hover {
+  background-color: #232C34; /* Change background color on hover */
+  opacity: 1; /* Ensure full opacity on hover */
+  box-shadow: 0 0 8px rgba(93, 115, 132, 0.6); /* Optional: add a glowing shadow */
+  border: 1px solid #5D7384; /* Glowing border on hover */
+}
+
+/* Ring and Glow Effects */
+.experience_container.glow:ring-1 {
+  @apply ring-1 ring-[#5D7384]; /* Set the ring color to the glow color */
+}
+
+.experience_container.glow:ring-glow {
+  @apply ring-glow; /* Apply the glow ring effect */
+}
+
+.experience_container.glow:bg-glow {
+  @apply bg-glow; /* Optional: change the background when hovered */
+}
+
+/* Styling for the Year Section */
 .experience_header {
-    @apply font-sans text-white text-base font-bold uppercase mb-6;
+  @apply font-sans text-white text-base font-bold uppercase mb-6;
 }
 .experience_year_info {
-    @apply font-sans text-sm capitalize text-customYellow mb-2;
+  @apply font-sans text-sm capitalize text-customYellow mb-2;
 }
+
+/* Styling for Position and Company */
 .experience_position {
-    @apply font-sans text-white text-base capitalize font-bold mb-[9px];
+  @apply font-sans text-white text-base capitalize font-bold mb-[9px];
 }
+
 .experience_company {
-    @apply font-sans text-white text-opacity-90 text-base font-thin;
+  @apply font-sans text-white text-opacity-90 text-base font-thin;
 }
+
+/* Description Styling */
 .experience_description {
-    @apply font-sans text-sm capitalize text-white text-opacity-60 pb-[17px];
-} 
+  @apply font-sans text-sm capitalize text-white text-opacity-60 pb-[17px];
+}
 
-
-    /* Responsive layout for medium screens and larger */
+/* Responsive Layout for Medium Screens and Larger */
 @media (min-width: 768px) {
-    .experience_container {
-        @apply flex-row px-6;
-     }
-    .experience_year_container  {
-        @apply flex-row w-1/4;
-    }
-    .experience_header {
-        @apply hidden;
-    }
-    .experience_position_container {
-        @apply w-3/4;
-    }
+  .experience_container {
+    @apply flex-row px-6; /* Change layout for larger screens */
+  }
+
+  .experience_year_container {
+    @apply flex-row w-1/4; /* Adjust year container layout */
+  }
+
+  .experience_header {
+    @apply hidden; /* Hide the header on larger screens */
+  }
+
+  .experience_position_container {
+    @apply w-3/4; /* Adjust position container layout */
+  }
 }
