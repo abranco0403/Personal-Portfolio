@@ -1,0 +1,26 @@
+/* Glowing Effect on Hover */
+.glowing-element {
+    transition: all 0.3s ease;
+}
+
+.glowing-element:hover {
+    text-shadow: 0 0 10px #2dd4bf, 0 0 20px #2dd4bf;
+    color: #2dd4bf;
+}
+
+/* Custom Border Glow Effect */
+.glow\:border-glow {
+    border-color: var(--glow-color) !important; /* Ensure border color is set to glow */
+    box-shadow: 0 0 10px var(--glow-color) !important; /* Add glow effect to the border */
+}
+
+/* Debugging Custom Glow Border Effect */
+.glowing-border {
+    border: 2px solid #2dd4bf; /* Bright purple border */
+    box-shadow: 0 0 10px rgba(45, 212, 191, 0.8); /* Purple glow */
+    transition: all 0.3s ease;
+}
+
+.glowing-border:hover {
+    box-shadow: 0 0 20px rgba(45, 212, 191, 1);
+}

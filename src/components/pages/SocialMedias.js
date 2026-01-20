@@ -1,6 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import socialMediaLinks from '../../data/SocialMediaData';
-import '../styles/socialMedias.css';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import socialMediaLinks from "../../data/SocialMediaData";
+import "../styles/socialMedias.css";
 
 export const SocialMedias = () => {
   return (
@@ -15,7 +16,11 @@ export const SocialMedias = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FontAwesomeIcon icon={icon} />
+          {typeof icon === "string" ? (
+            <img src={icon} alt={label} className="social_icon_image" />
+          ) : (
+            <FontAwesomeIcon icon={icon} />
+          )}
         </a>
       ))}
     </div>

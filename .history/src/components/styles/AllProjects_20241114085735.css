@@ -1,0 +1,30 @@
+
+.main_container {
+    @apply w-full h-screen pt-11 pb-24 px-6 bg-gradient-to-r from-customBlue to-customBlack;
+}
+.row {
+    @apply w-full px-24;
+}
+.title {
+    @apply text-5xl font-bold text-white;
+}
+.table_head {
+    @apply font-sans text-white text-start border-b border-white border-opacity-40 py-2 pr-8;
+}
+
+.table_data {
+    @apply font-sans text-sm align-text-bottom text-white border-b border-white border-opacity-40 py-4 pr-8;
+}
+.tech_column {
+    @apply hidden;
+}
+
+
+@media (min-width: 768px) {
+    .tech_column{
+        @apply inline-block;
+    }
+    .project_tech_list {
+        @apply mr-4 p-2 my-1 text-xs text-customYellow text-opacity-80 bg-customGreen bg-opacity-10 rounded-full;
+    }
+}

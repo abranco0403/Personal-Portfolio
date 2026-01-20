@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [build]
   publish = "build"
   command = "npm run build"
@@ -6,3 +7,9 @@
 from = "/*"
 to = "/index.html"
 status = 200
+=======
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+>>>>>>> 1d95ab3 (Update SocialMedias and portfolio)

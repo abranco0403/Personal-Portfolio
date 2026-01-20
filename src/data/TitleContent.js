@@ -1,11 +1,11 @@
 export const titleContent = {
   mobile: {
-    description: 'Data Analyst · SQL · Python · Power BI',
-    paragraph: 'Bridging business, education, and data to deliver meaningful insights.'
+    description: "Business Analyst · SQL · Power BI · Excel",
+    paragraph: "Bridging business operations and data to deliver clear, practical insights."
   },
   desktop: {
-    description: 'Data Analyst | Business-Focused | Educator at Core',
+    description: "Business Analyst (Retail & Ecommerce) | SQL • Power BI • Excel • Python",
     paragraph:
-      'Turning complex data into strategic insights using SQL, Python, and Power BI. Bridging analytics, communication, and business thinking to drive decisions that matter.'
+      "Helping sales and operations teams make better decisions through KPI-driven reporting, analytics, and clear communication. Combining business analysis, data skills, and an education background to turn everyday data into actionable insight."
   }
 };

@@ -1,0 +1,66 @@
+/* Basic Project Container */
+.project_container {
+  @apply flex flex-col-reverse py-4 mb-4 rounded-md;
+  border: 1px solid #232C34; /* Normal border style */
+  box-shadow: none; /* No shadow initially */
+  transition: all 0.3s ease; /* Smooth transition */
+  position: relative; /* Make sure elements are positioned correctly for the glow effect */
+  padding: 8px;
+}
+
+/* Hover Effect - Glow and background change */
+.project_container:hover {
+  background-color: #232C34; /* Change background color on hover */
+  opacity: 1; /* Ensure opacity is set to 1 during hover */
+  box-shadow: 0 0 8px rgba(93, 115, 132, 0.6); /* Optional: add a glow effect using box-shadow */
+  border: 1px solid #5D7384; /* Glowing border on hover */
+}
+
+/* Add the ring effect (Glow) using Tailwind classes */
+.project_container.glow:ring-1 {
+  @apply ring-1 ring-[#5D7384]; /* Set the ring color to match the glow */
+}
+
+.project_container.glow:ring-glow {
+  @apply ring-glow; /* Ensure glow behavior on hover */
+}
+
+.project_container.glow:bg-glow {
+  @apply bg-glow; /* Optional: change the background when hovered */
+}
+.project_body_description {
+  @apply font-sans text-sm capitalize text-white text-opacity-60 pb-[17px];
+}
+.project_title {
+  @apply font-sans text-white text-base font-bold uppercase mb-6;
+}
+.project_tech_list {
+  @apply flex flex-wrap gap-2;
+}
+
+/* Responsive layout for medium screens and larger */
+@media (min-width: 768px) {
+  .project_container {
+    @apply flex-row px-6;
+  }
+
+  .project_title {
+    @apply hidden; /* Hide title on larger screens */
+  }
+
+  .project_body_title {
+    @apply text-base;
+  }
+
+  .project_body_description {
+    @apply text-sm;
+  }
+
+  .project_body {
+    @apply w-3/4;
+  }
+
+  .project_header {
+    @apply w-full sm:w-1/4 mr-6;
+  }
+}

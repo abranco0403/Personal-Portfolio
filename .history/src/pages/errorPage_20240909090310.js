@@ -1,0 +1,21 @@
+// src/pages/ErrorPage.jsx
+import image404 from "../assets/404.png"
+
+const ErrorPage = () => {
+  console.log('ErrorPage component rendered');
+  return (
+    <div className="w-screen h-screen flex flex-col items-center justify-center bg-gradient-to-r from-customBlue to-customBlack text-center text-white">
+      <img src={image404} alt="Page Not Found - 404 Error" />
+      <p className="text-2xl mb-6">Oops! Page Not Found</p>
+      <a 
+        href="/" 
+        className="mt-4 px-6 py-3 font-semibold bg-customBlack text-white rounded-full hover:bg-customYellow hover:text-customBlack hover:border-none transition duration-300"
+        aria-label="Go to Homepage"
+      >
+        Go to Homepage
+      </a>
+    </div>
+  );
+};
+
+export default ErrorPage;

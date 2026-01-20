@@ -1,19 +1,15 @@
 export const aboutMeContentMain = [
-  "I’m a data analyst with a background in mathematics education, front-end development, and sales management. This multidisciplinary foundation helps me connect data with business context, think analytically, and communicate clearly.",
-  
-  "As a teacher, I turned complex ideas into digestible lessons—an essential skill when storytelling with data. In sales, I tracked KPIs, forecasted revenue, and used customer data to drive retention. As a developer, I designed dashboards that made insights accessible and actionable.",
-  
-  "Together, these experiences taught me to translate raw data into strategies that solve problems and move businesses forward."
-];
+  "I’m a Business Analyst with hands-on experience supporting retail and ecommerce operations through KPI tracking, reporting, and operational analysis. I use SQL, Power BI, Excel, and Python to turn sales, product, customer, and inventory data into clear insights that support day-to-day decisions.",
 
+  "In my current role as Retail Sales Manager / Operations Analyst, I partner with business ownership and sales stakeholders to gather reporting requirements, define performance metrics, and build recurring dashboards and reports for in-store and ecommerce performance. My work supports decisions around pricing, promotions, staffing, and replenishment planning.",
+
+  "I also bring six years of experience in education, which strengthened my ability to structure problems, communicate clearly, and explain quantitative insights to non-technical stakeholders—skills I now apply to business reporting and decision support."
+];
 
 export const aboutMeContentSecondary = [
-  "I work with SQL, Python, Excel, and Power BI to uncover trends, monitor performance, and inform decisions. My recent projects involve revenue analysis, customer segmentation, and A/B testing.",
-  
-  "Though I’m early in my analytics career, I bring a strong learning mindset, business intuition, and a consistent focus on impact. I’m comfortable working across teams and adapting to new tools or challenges quickly.",
-  
-  "If you're solving real-world problems and looking for someone who bridges data and business, I’d love to contribute and grow with your team."
+  "I enjoy working at the intersection of business operations and data—standardizing KPIs, improving reporting consistency, and helping teams gain visibility into performance. My recent projects include a retail operations dashboard, customer segmentation using transaction data, and sales trend analysis with simple forecasting.",
+
+  "I’m IBM Data Analytics certified and currently preparing for the Microsoft PL-300 Power BI Data Analyst certification. I’m comfortable learning new tools quickly and collaborating across teams to deliver practical, usable reporting.",
+
+  "If you're looking for someone who bridges business and data to improve planning and execution, I’d love to connect."
 ];
-
-
-
