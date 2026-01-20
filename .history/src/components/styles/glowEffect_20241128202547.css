@@ -1,9 +1,0 @@
-/* Glow effect styling */
-.glow-effect {
-  @apply ring-1 ring-[#2dd4bf] border-glow ring-glow bg-glow/[.15];
-}
-
-.glow-effect:hover {
-  @apply bg-[#1f1d1d] bg-opacity-60 ring-2 ring-[#2dd4bf] border-2;
-  box-shadow: 0 0 10px rgba(45, 212, 191, 0.5); /* Optional: add a glowing shadow */
-}

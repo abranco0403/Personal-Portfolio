@@ -1,5 +1,0 @@
-.social_container
-
-.social_icons {
-    @apply inline-flex items-center justify-center ml-2 w-10 h-10 bg-customBlack text-white rounded-full hover:bg-customYellow hover:text-customBlack hover:border-none transition duration-300;
-}
