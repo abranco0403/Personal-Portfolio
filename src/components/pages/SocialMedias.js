@@ -5,17 +5,25 @@ import { trackEvent } from "../../utils/analytics";
 import "../styles/socialMedias.css";
 
 export const SocialMedias = () => {
-  // Show only primary links (LinkedIn, GitHub, Resume)
   const items = useMemo(
     () => socialMediaLinks.filter((item) => item.priority === "primary"),
     []
   );
 
   const handleClick = (item) => {
-    trackEvent("social_click", {
-      platform: item.id,          // linkedin | github | resume
+    // Decide event name based on action
+    const eventName =
+      item.id === "resume_open"
+        ? "resume_open"
+        : item.id === "resume_download"
+        ? "resume_download"
+        : "social_click";
+
+    trackEvent(eventName, {
+      platform: item.id,
       label: item.label,
       url: item.url,
+      file_name: item.filename,
       page_location: window.location.href,
     });
   };
@@ -28,9 +36,10 @@ export const SocialMedias = () => {
           href={item.url}
           className="social_icons"
           title={item.label}
-          aria-label={item.ariaLabel || item.label}
-          target="_blank"
-          rel="noopener noreferrer"
+          aria-label={item.label}
+          target={item.action === "download" ? undefined : "_blank"}
+          rel={item.action === "download" ? undefined : "noopener noreferrer"}
+          download={item.action === "download" ? item.filename : undefined}
           onClick={() => handleClick(item)}
         >
           <FontAwesomeIcon icon={item.icon} />

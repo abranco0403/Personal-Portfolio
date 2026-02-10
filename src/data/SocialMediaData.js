@@ -1,12 +1,8 @@
+// src/data/SocialMediaData.js
 import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { faFilePdf, faDownload } from "@fortawesome/free-solid-svg-icons";
 import resumePdf from "../assets/docs/Alessandro_Branco_Resume.pdf";
 
-/**
- * Social links configuration
- * - Data only (no UI logic)
- * - Assets are imported so bundlers handle them safely
- */
 const socialMediaLinks = [
   {
     id: "linkedin",
@@ -14,7 +10,6 @@ const socialMediaLinks = [
     url: "https://www.linkedin.com/in/alessandro-branco/",
     label: "LinkedIn",
     priority: "primary",
-    external: true,
   },
   {
     id: "github",
@@ -22,15 +17,28 @@ const socialMediaLinks = [
     url: "https://github.com/abranco0403",
     label: "GitHub",
     priority: "primary",
-    external: true,
   },
+
+  // Resume open (new tab)
   {
-    id: "resume",
+    id: "resume_open",
     icon: faFilePdf,
     url: resumePdf,
-    label: "Resume (PDF)",
+    label: "Resume (Open)",
     priority: "primary",
-    external: true, // still opens a new tab
+    action: "open",
+    filename: "Alessandro_Branco_Resume.pdf",
+  },
+
+  // Resume download (forces download)
+  {
+    id: "resume_download",
+    icon: faDownload,
+    url: resumePdf,
+    label: "Resume (Download)",
+    priority: "primary",
+    action: "download",
+    filename: "Alessandro_Branco_Resume.pdf",
   },
 ];
 
