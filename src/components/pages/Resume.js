@@ -1,5 +1,5 @@
 import { ArrowUp } from '../common/ArrowUp'; // Ensure this path is correct
-import resume from '../../assets/docs/Alessandro_Branco_resume_data.pdf';
+import resume from '../../assets/docs/Alessandro_Branco_Resume.pdf';
 
 export const Resume = () => {
   const handleDownload = () => {

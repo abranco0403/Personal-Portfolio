@@ -1,21 +1,38 @@
-import { Title } from '../pages/Title';
-import { Navbar } from '../layout/Navbar';
-import { SocialMedias } from '../pages/SocialMedias';
-
+// src/components/layout/Header.jsx (or wherever yours lives)
+import React from "react";
+import { Title } from "../pages/Title";
+import { Navbar } from "../layout/Navbar";
+import { SocialMedias } from "../pages/SocialMedias";
 
 export const Header = () => {
   return (
-    <header className="w-full pt-[46px] pb-[96px] px-[24px] md:h-screen md:w-1/2 md:max-h-screen md:fixed md:py-20">
-      <div className="h-full flex flex-col justify-between items-start md:ps-[96px]">
-        <div>
+    <header
+      className={[
+        // mobile
+        "w-full px-6 pt-12 pb-24",
+        // desktop (left column fixed)
+        "md:fixed md:inset-y-0 md:left-0 md:w-1/2 md:max-h-screen md:py-20",
+      ].join(" ")}
+      aria-label="Site header"
+    >
+      <div
+        className={[
+          "h-full flex flex-col justify-between items-start",
+          // One source of truth for left alignment on desktop
+          "md:pl-24",
+        ].join(" ")}
+      >
+        {/* Top: Title + Navigation */}
+        <div className="w-full">
           <Title />
           <Navbar />
         </div>
-        <div>
+
+        {/* Bottom: Social / Resume links */}
+        <div className="mt-10">
           <SocialMedias />
-        </div> 
+        </div>
       </div>
     </header>
   );
 };
-

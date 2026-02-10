@@ -1,8 +1,25 @@
+/* Container */
 .social_container {
-  @apply flex gap-2 items-center justify-start;
+  @apply flex items-center gap-3 mt-6;
 }
 
-
+/* Icon button */
 .social_icons {
-    @apply inline-flex items-center justify-center ml-2 w-10 h-10 bg-customBlack text-white rounded-full hover:bg-customYellow hover:text-customBlack hover:border-none transition duration-300;
+  @apply inline-flex items-center justify-center
+         w-10 h-10
+         rounded-full
+         bg-white/5 text-white/70
+         transition-all duration-300 ease-out
+         hover:bg-customYellow hover:text-customBlack
+         hover:scale-105
+         focus:outline-none focus-visible:ring-2
+         focus-visible:ring-customYellow/70
+         focus-visible:ring-offset-2
+         focus-visible:ring-offset-[#0b0f12];
+}
+
+/* Optional: icon size consistency */
+.social_icons svg,
+.social_icons img {
+  @apply w-5 h-5;
 }

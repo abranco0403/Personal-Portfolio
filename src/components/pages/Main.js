@@ -7,7 +7,6 @@ import { Footer } from '../layout/Footer';
 export const Main = () => {
   return (
     <div className="w-full px-6 py-10 md:w-1/2 md:py-20 md:px-12 md:ml-auto">
-      {/* Conteúdo à direita para md+ */}
       <AboutMe />
       <Experience />
       <Projects />

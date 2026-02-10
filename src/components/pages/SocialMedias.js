@@ -1,28 +1,41 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import socialMediaLinks from "../../data/SocialMediaData";
+import { trackEvent } from "../../utils/analytics";
 import "../styles/socialMedias.css";
 
 export const SocialMedias = () => {
+  // Show only primary links (LinkedIn, GitHub, Resume)
+  const items = useMemo(
+    () => socialMediaLinks.filter((item) => item.priority === "primary"),
+    []
+  );
+
+  const handleClick = (item) => {
+    trackEvent("social_click", {
+      platform: item.id,          // linkedin | github | resume
+      label: item.label,
+      url: item.url,
+      page_location: window.location.href,
+    });
+  };
+
   return (
-    <div className="social_container">
-      {socialMediaLinks.map(({ url, label, icon }) => (
+    <nav className="social_container" aria-label="Social links">
+      {items.map((item) => (
         <a
+          key={item.id}
+          href={item.url}
           className="social_icons"
-          key={label}
-          href={url}
-          title={label}
-          aria-label={label}
+          title={item.label}
+          aria-label={item.ariaLabel || item.label}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => handleClick(item)}
         >
-          {typeof icon === "string" ? (
-            <img src={icon} alt={label} className="social_icon_image" />
-          ) : (
-            <FontAwesomeIcon icon={icon} />
-          )}
+          <FontAwesomeIcon icon={item.icon} />
         </a>
       ))}
-    </div>
+    </nav>
   );
 };

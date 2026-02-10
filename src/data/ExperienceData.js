@@ -2,18 +2,18 @@ const experienceData = [
   {
     id: 1,
     date: "2021 — Present",
-    position: "Business Analyst / Operations Analyst (Retail Sales Manager)",
-    company: "Dania 18 California",
+    position: "Operations Analyst – Sales & Retail Analytics",
+    company: "Memoreez",
     description:
-      "Gather business and reporting requirements from ownership and sales stakeholders to define operational KPIs and success metrics. Build recurring SQL, Excel, and Power BI reports to track in-store and ecommerce performance. Analyze revenue trends, product performance, customer behavior, and inventory levels to support pricing, promotion, staffing, and replenishment decisions. Document sales workflows and standardize dashboards to improve reporting consistency and reduce manual effort. Manage scheduling, onboarding, and performance tracking for a four-person sales team."
+      "Defined and tracked sales and operational KPIs to support pricing, staffing, inventory, and promotion decisions. Built recurring Power BI, SQL, and Excel dashboards to monitor in-store and ecommerce performance. Analyzed revenue trends, product performance, and customer behavior to identify optimization opportunities. Integrated transaction-level data from NOVA POS and web traffic insights from Google Analytics to support performance analysis and reporting. Gathered reporting requirements and partnered with stakeholders to standardize dashboards and workflows, improving reporting consistency and visibility."
   },
   {
     id: 2,
     date: "2013 — 2019",
-    position: "Mathematics Teacher",
-    company: "Moderna Organização Pedagógica Integrada",
+    position: "Mathematics Teacher (Data-Informed Instruction)",
+    company: "MOPI – Brazil",
     description:
-      "Collected and analyzed student performance data using Excel to identify trends and learning gaps. Produced structured reports for school administrators to support instructional planning. Applied quantitative analysis to evaluate intervention effectiveness and communicated findings to non-technical stakeholders, helping leadership make data-informed academic and support decisions."
+      "Analyzed performance data using Excel to identify trends and gaps. Produced reports for administrators to support planning decisions. Evaluated intervention effectiveness using quantitative analysis and communicated insights clearly to non-technical stakeholders."
   }
 ];
 

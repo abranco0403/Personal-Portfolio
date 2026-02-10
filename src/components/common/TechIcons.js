@@ -1,18 +1,42 @@
-import { SiPython, SiPandas, SiJupyter, SiPostgresql, SiPlotly, SiReact, SiTailwindcss, SiNetlify } from 'react-icons/si';
+import {
+  FaPython,
+  FaReact,
+  FaGithub,
+  FaChartBar,
+  FaDatabase,
+} from "react-icons/fa";
 
-// Se quiser usar Seaborn, matplotlib, sqlite, etc., use ícones disponíveis.
-// Se não existir um ícone específico, pode criar um placeholder.
+import {
+  SiPandas,
+  SiSqlite,
+  SiMysql,
+  SiJupyter,
+  SiTailwindcss,
+  SiNetlify,
+} from "react-icons/si";
 
+/**
+ * TechIcons
+ * - Uses only verified exports from react-icons
+ * - Avoids fake / non-existent Microsoft brand icons
+ * - Optimized for Business Analyst portfolios
+ */
 export const TechIcons = {
-  Python: { icon: SiPython, label: 'Python' },
-  Pandas: { icon: SiPandas, label: 'Pandas' },
-  Jupyter: { icon: SiJupyter, label: 'Jupyter' },
-  PostgreSQL: { icon: SiPostgresql, label: 'PostgreSQL' },
-  Plotly: { icon: SiPlotly, label: 'Plotly' },
-  React: { icon: SiReact, label: 'React' },
-  Tailwind: { icon: SiTailwindcss, label: 'Tailwind CSS' },
-  Netlify: { icon: SiNetlify, label: 'Netlify' },
-  Seaborn: { icon: SiPython, label: 'Seaborn' }, // placeholder: usa Python icon
-  Matplotlib: { icon: SiPython, label: 'Matplotlib' }, // placeholder
-  SQLite: { icon: SiPostgresql, label: 'SQLite' } // exemplo, ou pode criar um ícone genérico
+  // Analytics & Data
+  Python: { icon: FaPython, label: "Python" },
+  Pandas: { icon: SiPandas, label: "Pandas" },
+  SQL: { icon: FaDatabase, label: "SQL" },
+  SQLite: { icon: SiSqlite, label: "SQLite" },
+  MySQL: { icon: SiMysql, label: "MySQL" },
+  Jupyter: { icon: SiJupyter, label: "Jupyter Notebook" },
+
+  // BI & Reporting (Power BI represented semantically)
+  PowerBI: { icon: FaChartBar, label: "Power BI" },
+  Excel: { icon: FaChartBar, label: "Excel" },
+
+  // Frontend / Platform
+  React: { icon: FaReact, label: "React" },
+  Tailwind: { icon: SiTailwindcss, label: "Tailwind CSS" },
+  Netlify: { icon: SiNetlify, label: "Netlify" },
+  GitHub: { icon: FaGithub, label: "GitHub" },
 };

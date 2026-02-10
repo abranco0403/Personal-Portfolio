@@ -1,21 +1,36 @@
 .title_name {
-    @apply font-sans text-4xl font-bold tracking-tighter text-white;
+  @apply font-sans text-4xl font-bold tracking-tighter text-white;
 }
+
+/* Main role (Business Analyst) */
 .title_description {
-    @apply font-sans text-xl text-customYellow my-2;
+  @apply font-sans text-xl font-semibold text-customYellow mt-3;
 }
+
+/* Domain / tools line */
+.title_subheader {
+  @apply font-sans text-sm uppercase tracking-wide text-white text-opacity-70 mb-3;
+}
+
+/* Value statement */
 .title_paragraph {
-    @apply font-sans text-base text-white text-opacity-80;
+  @apply font-sans text-base text-white text-opacity-80 leading-relaxed;
 }
 
 @media (min-width: 768px) {
-    .title_name {
-        @apply text-5xl;
-    }
-    .title_description {
-        @apply my-4 pt-2 pb-3;
-    }
-    .title_paragraph {
-        @apply w-3/4;
-    }
+  .title_name {
+    @apply text-5xl;
+  }
+
+  .title_description {
+    @apply mt-4 mb-1;
+  }
+
+  .title_subheader {
+    @apply text-base mb-4;
+  }
+
+  .title_paragraph {
+    @apply w-3/4;
+  }
 }
