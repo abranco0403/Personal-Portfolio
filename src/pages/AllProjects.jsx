@@ -2,19 +2,19 @@
 import React, { useMemo, useState } from "react";
 import { ArrowLeft } from "../components/common/ArrowLeft";
 import { ArrowUp } from "../components/common/ArrowUp";
-import projectsData from "../data/ProjectsData";
+import projectsData from "../data/ProjectsArchiveData";
 import "../components/styles/AllProjects.css";
 
 /**
- * AllProjects
- * - Robust against missing/undefined technologies (prevents crashes).
- * - Search + filter + sort over project name/description/tools/year.
- * - Works with projectsData that contains any mix of projects.
+ * AllProjects (Archive)
+ * - Fast scanning: year, project name, tools, GitHub
+ * - Robust against missing/undefined technologies
+ * - Search + filter + sort
  */
 
 const isExternalUrl = (url = "") => /^https?:\/\//i.test(url);
 
-const ProjectLink = ({ to, text, ariaLabel }) => {
+const LinkOut = ({ to, text, ariaLabel }) => {
   const external = isExternalUrl(to);
 
   return (
@@ -39,11 +39,10 @@ const matchesQuery = (project, q) => {
   if (!query) return true;
 
   const tech = getTechLabels(project.technologies).join(" ").toLowerCase();
+
   const haystack = [
     project.projectName,
-    project.description,
     project.madeAt,
-    project.linkName,
     tech,
     String(project.year ?? ""),
   ]
@@ -92,22 +91,20 @@ const TechIconsList = ({ technologies = [] }) => {
     ? technologies.filter((t) => t && t.icon && t.label)
     : [];
 
-  if (!safeTech.length) return null;
+  if (!safeTech.length) return <span className="text-sm text-white/40">—</span>;
 
   return (
-    <ul className="flex flex-wrap">
+    <ul className="flex flex-wrap gap-2">
       {safeTech.map((t) => {
         const Icon = t.icon;
-        const label = t.label;
-
         return (
           <li
-            key={label}
-            className="flex items-center justify-center w-8 h-8 m-1 rounded-full bg-customGreen bg-opacity-10 text-customGreen"
-            title={label}
+            key={t.label}
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-customGreen bg-opacity-10 text-customGreen"
+            title={t.label}
           >
             <Icon className="w-5 h-5" aria-hidden="true" />
-            <span className="sr-only">{label}</span>
+            <span className="sr-only">{t.label}</span>
           </li>
         );
       })}
@@ -154,18 +151,16 @@ const AllProjects = () => {
         {/* Controls */}
         <section className="mt-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            {/* Search */}
             <label className="w-full sm:max-w-sm">
               <span className="sr-only">Search projects</span>
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search projects (SQL, retail, dashboard, …)"
+                placeholder="Search projects (SQL, python, datacamp, …)"
                 className="w-full rounded-md bg-white/5 border border-white/10 px-3 py-2 text-sm text-white/80 placeholder:text-white/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-customYellow/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0f12]"
               />
             </label>
 
-            {/* Sort */}
             <div className="flex items-center gap-2">
               <span className="text-sm text-white/50">Sort</span>
               <select
@@ -183,7 +178,6 @@ const AllProjects = () => {
             </div>
           </div>
 
-          {/* Filters */}
           <div className="mt-4 flex flex-wrap gap-2">
             {FILTERS.map((f) => (
               <button
@@ -224,10 +218,10 @@ const AllProjects = () => {
                   Made At
                 </th>
                 <th className="hidden py-4 pr-6 text-sm font-semibold text-slate-200 lg:table-cell">
-                  Built With
+                  Tools
                 </th>
                 <th className="hidden py-4 pr-6 text-sm font-semibold text-slate-200 sm:table-cell">
-                  Link
+                  GitHub
                 </th>
               </tr>
             </thead>
@@ -236,42 +230,18 @@ const AllProjects = () => {
               {visible.map((project) => (
                 <tr
                   key={project.id}
-                  className="border-b border-slate-300/10 last:border-none"
+                  className="border-b border-slate-300/10 last:border-none hover:bg-white/5 transition"
                 >
                   <td className="py-4 pr-4 align-top text-sm text-slate-200">
                     {project.year || ""}
                   </td>
 
                   <td className="py-4 pr-4 align-top font-semibold text-slate-200">
-                    {/* Mobile: project name is the link */}
-                    <div className="block sm:hidden text-xs">
-                      <ProjectLink
-                        to={project.linkAddress}
-                        text={project.projectName}
-                        ariaLabel={`View project: ${project.projectName}`}
-                      />
-                    </div>
-
-                    {/* Desktop: just the name */}
-                    <div className="hidden sm:block">{project.projectName}</div>
-
-                    {/* Optional mobile hint */}
-                    {project.madeAt && (
-                      <div className="mt-1 text-xs text-white/45 sm:hidden">
-                        {project.madeAt}
-                      </div>
-                    )}
-
-                    {/* Helpful: show description on desktop for better UX */}
-                    {project.description && (
-                      <p className="mt-1 hidden sm:block text-sm font-normal text-white/60">
-                        {project.description}
-                      </p>
-                    )}
+                    <div className="sm:block">{project.projectName}</div>
                   </td>
 
                   <td className="hidden py-4 pr-4 align-top text-sm text-slate-200 lg:table-cell">
-                    {project.madeAt}
+                    {project.madeAt || "—"}
                   </td>
 
                   <td className="hidden py-4 align-top lg:table-cell">
@@ -279,11 +249,15 @@ const AllProjects = () => {
                   </td>
 
                   <td className="hidden sm:table-cell align-top py-4 pr-4">
-                    <ProjectLink
-                      to={project.linkAddress}
-                      text={project.linkName || "Open"}
-                      ariaLabel={`Link to project: ${project.projectName}`}
-                    />
+                    {project.repoUrl ? (
+                      <LinkOut
+                        to={project.repoUrl}
+                        text="GitHub"
+                        ariaLabel={`Open GitHub repo for: ${project.projectName}`}
+                      />
+                    ) : (
+                      <span className="text-sm text-white/40">—</span>
+                    )}
                   </td>
                 </tr>
               ))}

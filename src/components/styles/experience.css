@@ -12,7 +12,7 @@
 /* Main Container */
 .experience_container {
   @apply flex flex-col py-4 px-2 mb-4 rounded-md w-full;
-  border: 1px solid #232C34;
+  /* border: 1px solid #232C34; */
   box-shadow: none;
   transition: all 0.3s ease;
   position: relative;

@@ -1,69 +1,94 @@
-/* Basic Project Container */
+/* ============================
+   Project Container
+   ============================ */
+
 .project_container {
-  @apply flex flex-col-reverse py-4 mb-4 rounded-md;
-  border: 1px solid #232C34; /* Normal border style */
-  box-shadow: none; /* No shadow initially */
-  transition: all 0.3s ease; /* Smooth transition */
-  position: relative; /* Make sure elements are positioned correctly for the glow effect */
-  padding: 8px;
+  @apply w-full flex flex-col mb-4 rounded-xl border border-white/10 bg-white/5;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+  padding: 18px;
 }
 
-/* Hover Effect - Glow and background change */
 .project_container:hover {
-  background-color: #232C34;
-  opacity: 1;
-  box-shadow: 0 0 8px rgba(93, 115, 132, 0.6);
-  border: 1px solid #5D7384;
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 10px rgba(93, 115, 132, 0.35);
+  border-color: rgba(245, 197, 81, 0.35);
 }
 
-/* Add the ring effect (Glow) using Tailwind classes */
-.project_container.glow:ring-1 {
-  @apply ring-1 ring-[#5D7384]; /* Set the ring color to match the glow */
-}
+/* ============================
+   Typography
+   ============================ */
 
-.project_container.glow:ring-glow {
-  @apply ring-glow; /* Ensure glow behavior on hover */
-}
-
-.project_container.glow:bg-glow {
-  @apply bg-glow; /* Optional: change the background when hovered */
-}
-.project_body_description {
-  @apply font-sans text-sm capitalize text-white text-opacity-60 pb-[17px];
-}
 .project_title {
-  @apply font-sans text-white text-base font-bold uppercase mb-6;
+  @apply font-sans text-xs font-semibold uppercase tracking-[0.14em]
+         text-white/50 mb-4;
 }
+
+.project_body_title {
+  @apply font-sans font-semibold text-slate-100
+         text-[18px] leading-[1.2];
+}
+
+.project_body_description {
+  @apply font-sans text-[14px] leading-[1.55]
+         text-white/65 mt-2;
+}
+
+.project_highlights {
+  @apply mt-3 space-y-1.5 text-[14px] leading-[1.5] text-white/55;
+}
+
+.project_highlight_item {
+  @apply flex gap-2;
+}
+
+.project_highlight_item::before {
+  content: "";
+  @apply mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-white/30;
+}
+
+/* ============================
+   Layout
+   ============================ */
+
+.project_body {
+  @apply w-full flex flex-col;
+}
+
+/* ============================
+   Tech Icons
+   ============================ */
+
+.project_tech_container {
+  @apply flex flex-wrap gap-2 mt-4;
+}
+
 .project_tech_list {
-  @apply hidden;
+  @apply flex items-center justify-center
+         w-11 h-11 rounded-full
+         bg-customGreen/15 border border-white/10 shrink-0;
 }
-/* Responsive layout for medium screens and larger */
+
+.project_tech_list svg {
+  width: 18px !important;
+  height: 18px !important;
+  color: #f5c551 !important; /* fallback customYellow */
+  display: block !important;
+}
+
+/* ============================
+   Responsive
+   ============================ */
+
 @media (min-width: 768px) {
   .project_container {
-    @apply flex-row px-6;
+    padding: 22px;
   }
 
   .project_title {
-    @apply hidden; /* Hide title on larger screens */
+    @apply hidden;
   }
 
   .project_body_title {
-    @apply text-base;
+    @apply text-[20px];
   }
-
-  .project_body_description {
-    @apply text-sm;
-  }
-
-  .project_body {
-    @apply w-3/4;
-  }
-
-  .project_header {
-    @apply w-full sm:w-1/4 mr-6;
-  }
-  .project_tech_list {
-    @apply inline-block mr-4 p-4 my-1 text-xs rounded-full text-customYellow text-opacity-80 bg-customGreen bg-opacity-10;
-  }
-
 }

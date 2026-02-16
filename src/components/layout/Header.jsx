@@ -1,7 +1,7 @@
 // src/components/layout/Header.jsx (or wherever yours lives)
 import React from "react";
 import { Title } from "../pages/Title";
-import { Navbar } from "../layout/Navbar";
+import { Navbar } from "./Navbar";
 import { SocialMedias } from "../pages/SocialMedias";
 
 export const Header = () => {

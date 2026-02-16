@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* ============================
+   Case Study Sections
+   ============================ */
+
+.section_title {
+  @apply text-sm font-semibold uppercase tracking-[0.14em] text-white/50;
+}
+
+.section_list {
+  @apply mt-3 space-y-2 text-sm text-white/70;
+}
+
+.pill_list {
+  @apply mt-3 flex flex-wrap gap-2;
+}
+
+.pill_list li {
+  @apply inline-flex items-center rounded-full border border-white/10
+         bg-white/5 px-3 py-1 text-xs text-white/70;
+}

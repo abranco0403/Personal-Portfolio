@@ -1,7 +1,7 @@
 // src/layout/Main.js
-import { Experience } from '../pages/Experience';
-import { AboutMe } from '../pages/AboutMe';
-import { Projects } from '../pages/ProjectsMain';
+import { Experience } from './Experience';
+import { AboutMe } from './AboutMe';
+import { ProjectsMain } from './ProjectsMain';
 import { Footer } from '../layout/Footer';
 
 export const Main = () => {
@@ -9,7 +9,7 @@ export const Main = () => {
     <div className="w-full px-6 py-10 md:w-1/2 md:py-20 md:px-12 md:ml-auto">
       <AboutMe />
       <Experience />
-      <Projects />
+      <ProjectsMain />
       <Footer />
     </div>
   );
