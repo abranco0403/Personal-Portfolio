@@ -1,9 +1,24 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const isExternalUrl = (url = "") => /^https?:\/\//i.test(url);
+
+const ArrowUpIcon = ({ className = "" }) => (
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    {/* Arrow up-right */}
+    <path d="M7 17L17 7" />
+    <path d="M10 7h7v7" />
+  </svg>
+);
 
 export const ArrowUp = ({
   to,
@@ -15,32 +30,47 @@ export const ArrowUp = ({
   target,
   rel,
 }) => {
+  const baseClass =
+    "group inline-flex items-baseline gap-2 font-sans leading-[20px] capitalize " +
+    "transition-colors duration-200 " +
+    "focus:outline-none focus-visible:ring-2 focus-visible:ring-customYellow/60 " +
+    "focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0f12]";
+
+  const combined = `${baseClass} ${className}`.trim();
+
   const content = (
     <>
-      <span className="text-customYellow group-hover:underline transition duration-200">
+      {/* underline only the text */}
+      <span className="text-customYellow underline-offset-4 group-hover:underline">
         {linkText}
       </span>
-      <span className="relative ml-2">
-        <FontAwesomeIcon
-          className="text-customYellow absolute bottom-0 left-0 rotate-45 group-hover:-translate-y-1/2 group-hover:translate-x-1/2 transition duration-300"
-          icon={faArrowUp}
-        />
-      </span>
+
+      {/* ✅ Baseline-aligned icon, no absolute, no FA CSS, no ghosting */}
+      <ArrowUpIcon
+        className="
+          text-customYellow
+          inline-block
+          w-[15px] h-[15px]
+          translate-y-[1px]
+          transform-gpu
+          transition-transform duration-200
+          will-change-transform
+          group-hover:-translate-y-0.5
+          group-hover:translate-x-0.5
+        "
+      />
     </>
   );
 
-  const baseClass =
-    "group inline-flex items-center font-sans leading-[20px] capitalize transition duration-300";
-
-  // ✅ PDFs / files should use <a href>, not <Link>
+  // Files/PDFs
   if (href) {
     return (
       <a
         href={href}
         target={target ?? "_blank"}
         rel={rel ?? "noopener noreferrer"}
-        aria-label={ariaLabel}
-        className={`${baseClass} ${className}`}
+        aria-label={ariaLabel || linkText}
+        className={combined}
         onClick={onClick}
       >
         {content}
@@ -48,15 +78,15 @@ export const ArrowUp = ({
     );
   }
 
-  // ✅ External URLs should use <a>
+  // External URLs
   if (to && isExternalUrl(to)) {
     return (
       <a
         href={to}
         target={target ?? "_blank"}
         rel={rel ?? "noopener noreferrer"}
-        aria-label={ariaLabel}
-        className={`${baseClass} ${className}`}
+        aria-label={ariaLabel || linkText}
+        className={combined}
         onClick={onClick}
       >
         {content}
@@ -64,26 +94,22 @@ export const ArrowUp = ({
     );
   }
 
-  // ✅ Internal routes use <Link>
+  // Internal route
   if (to) {
     return (
-      <Link
-        to={to}
-        aria-label={ariaLabel}
-        className={`${baseClass} ${className}`}
-      >
+      <Link to={to} aria-label={ariaLabel || linkText} className={combined}>
         {content}
       </Link>
     );
   }
 
-  // ✅ Fallback button (rare)
+  // Button fallback
   return (
     <button
       type="button"
       onClick={onClick}
-      aria-label={ariaLabel}
-      className={`${baseClass} ${className}`}
+      aria-label={ariaLabel || linkText}
+      className={combined}
     >
       {content}
     </button>

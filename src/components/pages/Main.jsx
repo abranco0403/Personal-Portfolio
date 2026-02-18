@@ -1,8 +1,8 @@
-// src/layout/Main.js
-import { Experience } from './Experience';
-import { AboutMe } from './AboutMe';
-import { ProjectsMain } from './ProjectsMain';
-import { Footer } from '../layout/Footer';
+// src/layout/Main.jsx
+import { Experience } from "./Experience";
+import { AboutMe } from "./AboutMe";
+import { ProjectsMain } from "./ProjectsMain";
+import { Footer } from "../layout/Footer";
 
 export const Main = () => {
   return (

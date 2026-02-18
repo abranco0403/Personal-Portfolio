@@ -1,4 +1,4 @@
-// src/components/pages/ProjectsMain.js
+// src/components/pages/ProjectsMain.jsx
 import React, { useMemo } from "react";
 import { ArrowUp } from "../common/ArrowUp";
 import featuredProjects from "../../data/ProjectsFeaturedData";
@@ -13,24 +13,42 @@ const GlowCard = ({ children }) => (
   </GlowCapture>
 );
 
+/**
+ * TechList
+ * - Main Projects page shows TECHNOLOGY NAMES (pills)
+ * - Icons are reserved for the Project Archive
+ */
 const TechList = ({ technologies = [] }) => {
   const safeTech = Array.isArray(technologies)
-    ? technologies.filter((t) => t && t.icon && t.label)
+    ? technologies.filter((t) => t && t.label)
     : [];
 
   if (!safeTech.length) return null;
 
   return (
-    <ul className="project_tech_container" aria-label="Technologies used">
-      {safeTech.map(({ icon: TechIcon, label }) => (
-        <li key={label} className="project_tech_list" title={label}>
-          {/* SVG rendered here */}
-          <TechIcon aria-hidden="true" />
-          <span className="sr-only">{label}</span>
+    <ul className="project_tech_pills" aria-label="Technologies used">
+      {safeTech.map(({ label }) => (
+        <li key={label} className="project_tech_pill">
+          {label}
         </li>
       ))}
     </ul>
   );
+};
+
+const ProjectTitle = ({ project }) => {
+  if (project.caseStudyPath) {
+    return (
+      <ArrowUp
+        to={project.caseStudyPath}
+        linkText={project.projectName}
+        ariaLabel={`Open details for ${project.projectName}`}
+        className="project_title_link font-semibold"
+      />
+    );
+  }
+
+  return <span>{project.projectName}</span>;
 };
 
 const ProjectCard = ({ project }) => {
@@ -42,7 +60,7 @@ const ProjectCard = ({ project }) => {
         <article className="project_container" aria-labelledby={titleId}>
           <div className="project_body">
             <h3 id={titleId} className="project_body_title">
-              {project.projectName}
+              <ProjectTitle project={project} />
             </h3>
 
             {project.description && (
@@ -53,7 +71,10 @@ const ProjectCard = ({ project }) => {
 
             {Array.isArray(project.highlights) &&
               project.highlights.length > 0 && (
-                <ul className="project_highlights" aria-label="Key highlights">
+                <ul
+                  className="project_highlights"
+                  aria-label="Key highlights"
+                >
                   {project.highlights.slice(0, 2).map((item) => (
                     <li key={item} className="project_highlight_item">
                       {item}
@@ -62,18 +83,8 @@ const ProjectCard = ({ project }) => {
                 </ul>
               )}
 
+            {/* Technology names as pills */}
             <TechList technologies={project.technologies} />
-
-            {project.caseStudyPath && (
-              <div className="pt-3">
-                <ArrowUp
-                  to={project.caseStudyPath}
-                  linkText="Case Study"
-                  ariaLabel={`Open case study for ${project.projectName}`}
-                  className="font-semibold"
-                />
-              </div>
-            )}
           </div>
         </article>
       </GlowCard>
@@ -88,9 +99,13 @@ export const ProjectsMain = () => {
   }, []);
 
   return (
-    <section id="projects" className="mt-32" aria-labelledby="projects-title">
+    <section
+      id="projects"
+      className="section"
+      aria-labelledby="projects-title"
+    >
       <header className="flex items-end justify-between gap-6">
-        <h2 id="projects-title" className="project_title">
+        <h2 id="projects-title" className="sectionLabel">
           Projects
         </h2>
       </header>
@@ -102,9 +117,12 @@ export const ProjectsMain = () => {
           ))}
         </ul>
       ) : (
-        <p className="project_empty">No featured projects available yet.</p>
+        <p className="sectionText">
+          No featured projects available yet.
+        </p>
       )}
 
+      {/* Archive link (secondary action) */}
       <div className="mt-8">
         <ArrowUp
           to="/allprojects"

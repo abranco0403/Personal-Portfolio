@@ -28,6 +28,10 @@
          text-[18px] leading-[1.2];
 }
 
+.project_title_link {
+  @apply text-customYellow hover:underline underline-offset-4;
+}
+
 .project_body_description {
   @apply font-sans text-[14px] leading-[1.55]
          text-white/65 mt-2;
@@ -74,6 +78,53 @@
   color: #f5c551 !important; /* fallback customYellow */
   display: block !important;
 }
+
+.project_tech_text {
+  /* optional: keep consistent spacing and tone */
+  opacity: 0.9;
+}
+
+/* =========================
+   Project Tech Pills
+   ========================= */
+
+.project_tech_pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.project_tech_pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.55rem 1.05rem;
+  border-radius: 999px;
+
+  font-size: 0.85rem;
+  line-height: 1;
+  font-weight: 500;
+
+  color: #D0D3DB; /* text-accent */
+
+  background: rgba(45, 212, 191, 0.10); /* customGreen tint */
+  border: 1px solid rgba(45, 212, 191, 0.18);
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 213, 133, 0.05);
+}
+
+.project_tech_pill:hover {
+  background: rgba(45, 212, 191, 0.14);
+  border-color: rgba(45, 212, 191, 0.28);
+  color: #E6E7EB; /* text-primary */
+}
+
 
 /* ============================
    Responsive

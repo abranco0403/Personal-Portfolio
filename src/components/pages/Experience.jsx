@@ -1,4 +1,4 @@
-// src/components/pages/Experience.js
+// src/components/pages/Experience.jsx
 import { Glow, GlowCapture } from "@codaworks/react-glow";
 import experienceData from "../../data/ExperienceData";
 import { Resume } from "./Resume";
@@ -40,27 +40,21 @@ export const Experience = () => {
   const items = Array.isArray(experienceData) ? experienceData : [];
 
   return (
-    <section
-      id="experience"
-      className="mt-32"
-      aria-labelledby="experience-title"
-    >
-      <h2 id="experience-title" className="experience_header">
+    <section id="experience" className="section" aria-labelledby="experience-title">
+      <h2 id="experience-title" className="sectionLabel">
         Experience
       </h2>
 
       {items.length > 0 ? (
-        // ✅ No role="list" (UL already has implicit list role)
         <ul className="experience_list">
           {items.map((item) => (
             <ExperienceItem key={item.id} item={item} />
           ))}
         </ul>
       ) : (
-        <p className="experience_description">No experience entries available yet.</p>
+        <p className="sectionText">No experience entries available yet.</p>
       )}
 
-      {/* Resume Section */}
       <Resume />
     </section>
   );

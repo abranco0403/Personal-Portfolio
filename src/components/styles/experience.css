@@ -1,3 +1,5 @@
+/* src/components/styles/experience.css */
+
 /* List wrapper (for <ul> + <li>) */
 .experience_list {
   list-style: none;
@@ -12,7 +14,6 @@
 /* Main Container */
 .experience_container {
   @apply flex flex-col py-4 px-2 mb-4 rounded-md w-full;
-  /* border: 1px solid #232C34; */
   box-shadow: none;
   transition: all 0.3s ease;
   position: relative;
@@ -38,18 +39,13 @@
   @apply bg-glow;
 }
 
-/* Experience Header */
-.experience_header {
-  @apply font-sans text-white text-base font-bold uppercase mb-6;
-}
-
 /* Year Section */
 .experience_year_container {
   @apply w-full mb-2;
 }
 
 .experience_year_info {
-  @apply font-sans text-sm capitalize text-customYellow mb-2;
+  @apply font-sans text-sm capitalize font-semibold text-text-muted mb-2;
 }
 
 /* Position & Company */
@@ -67,7 +63,7 @@
 
 /* Description */
 .experience_description {
-  @apply block w-full font-sans text-sm capitalize text-white text-opacity-60 pb-4;
+  @apply block w-full font-sans text-base text-text-secondary leading-relaxed pb-4 md:text-sm;
 }
 
 /* Responsive Layout for Medium Screens */
@@ -82,10 +78,6 @@
 
   .experience_position_container {
     @apply w-3/4 flex flex-col;
-  }
-
-  .experience_header {
-    @apply hidden;
   }
 
   .experience_description {

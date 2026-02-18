@@ -1,11 +1,49 @@
+/* src/index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================
+   SECTION SYSTEM (GLOBAL – SAFE LOCATION)
+   ========================================= */
+@layer components {
+  /* Section vertical rhythm */
+  .section {
+    @apply w-full mt-24 md:mt-32;
+  }
 
-/* ============================
+  /* Optional padding helper */
+  .sectionPadMd {
+    @apply md:px-6;
+  }
+
+  /* Small uppercase section label */
+  .sectionLabel {
+    @apply font-sans text-white text-base font-bold uppercase mb-6;
+  }
+
+  /* Shared paragraph style */
+  .sectionText {
+    @apply font-sans text-base text-white/80 leading-relaxed md:text-sm;
+  }
+
+  /* Paragraph spacing */
+  .sectionText + .sectionText {
+    @apply mt-4;
+  }
+
+  /* Hide label on md+ (your current UX pattern) */
+  @media (min-width: 768px) {
+    .sectionLabel {
+      @apply hidden;
+    }
+  }
+}
+
+/* =========================================
    Case Study Sections
-   ============================ */
+   ========================================= */
 
 .section_title {
   @apply text-sm font-semibold uppercase tracking-[0.14em] text-white/50;
@@ -22,4 +60,11 @@
 .pill_list li {
   @apply inline-flex items-center rounded-full border border-white/10
          bg-white/5 px-3 py-1 text-xs text-white/70;
+}
+
+@layer components {
+  /* First section should not push down on large screens */
+  .section--first {
+    @apply mt-0 md:mt-0;
+  }
 }
